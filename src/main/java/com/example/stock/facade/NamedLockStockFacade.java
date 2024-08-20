@@ -21,7 +21,7 @@ public class NamedLockStockFacade {
             lockRepository.getLock(id.toString());
             stockService.decrease(id, quantity);
         } finally {
-            lockRepository.getLock(id.toString());
+            lockRepository.releaseLock(id.toString());
         }
     }
 }
